@@ -18,6 +18,12 @@ namespace MONAPI.Controllers
         public ProductsController(IProductService productService)
         {
             _productService = productService;
+            _productService.Create(new ProductDTO
+            {
+                Id = 1,
+                Name = "huhuu",
+                Price = 1846
+            }) ;
         }
 
         [HttpGet]
