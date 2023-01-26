@@ -1,0 +1,12 @@
+/Users/etudiant/Projects/MONAPI/DTOs/bin/Debug/net6.0/DTOs.deps.json
+/Users/etudiant/Projects/MONAPI/DTOs/bin/Debug/net6.0/DTOs.dll
+/Users/etudiant/Projects/MONAPI/DTOs/bin/Debug/net6.0/DTOs.pdb
+/Users/etudiant/Projects/MONAPI/DTOs/obj/Debug/net6.0/DTOs.csproj.AssemblyReference.cache
+/Users/etudiant/Projects/MONAPI/DTOs/obj/Debug/net6.0/DTOs.GeneratedMSBuildEditorConfig.editorconfig
+/Users/etudiant/Projects/MONAPI/DTOs/obj/Debug/net6.0/DTOs.AssemblyInfoInputs.cache
+/Users/etudiant/Projects/MONAPI/DTOs/obj/Debug/net6.0/DTOs.AssemblyInfo.cs
+/Users/etudiant/Projects/MONAPI/DTOs/obj/Debug/net6.0/DTOs.csproj.CoreCompileInputs.cache
+/Users/etudiant/Projects/MONAPI/DTOs/obj/Debug/net6.0/DTOs.dll
+/Users/etudiant/Projects/MONAPI/DTOs/obj/Debug/net6.0/refint/DTOs.dll
+/Users/etudiant/Projects/MONAPI/DTOs/obj/Debug/net6.0/DTOs.pdb
+/Users/etudiant/Projects/MONAPI/DTOs/obj/Debug/net6.0/ref/DTOs.dll

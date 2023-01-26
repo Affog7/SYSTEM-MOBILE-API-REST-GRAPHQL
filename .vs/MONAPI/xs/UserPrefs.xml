@@ -1,0 +1,55 @@
+﻿<Properties StartupConfiguration="{CC15CB5E-65C8-474E-AAF3-47485F583999}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/etudiant/Projects/MONAPI/MONAPI/Controllers/ProductsController.cs" relfile="MONAPI/Controllers/ProductsController.cs" line="42" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DTOs/StockDTO.cs">
+    <Files>
+      <File FileName="MONAPI/Program.cs" />
+      <File FileName="MONAPI/Controllers/ProductsController.cs" />
+      <File FileName="Services/Abstracts/IProductService.cs" />
+      <File FileName="Services/ProductService.cs" />
+      <File FileName="MONAPI/appsettings.json" />
+      <File FileName="../WebApid/WebApid/Program.cs" />
+      <File FileName="MONAPI/Startup.cs" />
+      <File FileName="MONAPI/appsettings.Development.json" />
+      <File FileName="Repository/ProductRepository.cs" />
+      <File FileName="Repository/IProductRepository.cs" />
+      <File FileName="Services/UnitOfWork/UnitOfWork.cs" />
+      <File FileName="ApiGateway/Program.cs" />
+      <File FileName="ApiGateway/appsettings.json" />
+      <File FileName="ApiGateway/ocelot.json" />
+      <File FileName="ApiGateway/appsettings.Development.json" />
+      <File FileName="ApiGateway/Startup.cs" />
+      <File FileName="Models/Product.cs" />
+      <File FileName="Models/Stock.cs" />
+      <File FileName="EF/MyDbContext.cs" />
+      <File FileName="EF/EF.csproj" />
+      <File FileName="DTOs/StockDTO.cs" Line="18" Column="1" />
+      <File FileName="DTOs/ProductDTO.cs" />
+      <File FileName="Services/StockService.cs" />
+      <File FileName="MONAPI/Controllers/StocksController.cs" />
+      <File FileName="Repository/IStockRepository.cs" />
+      <File FileName="Repository/StockRepository.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MONAPI" expanded="True">
+            <Node name="DTOs" expanded="True" />
+            <Node name="MONAPI" expanded="True" />
+            <Node name="Services" expanded="True">
+              <Node name="Mapper" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ApiGateway PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.ItemProperties.MONAPI PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MultiItemStartupConfigurations />
+</Properties>
