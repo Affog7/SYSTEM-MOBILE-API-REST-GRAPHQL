@@ -10,10 +10,12 @@
     <None Remove="Abstracts\" />
     <None Remove="UnitOfWork\" />
     <None Remove="AutoMapper" />
+    <None Remove="Mapper\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstracts\" />
     <Folder Include="UnitOfWork\" />
+    <Folder Include="Mapper\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Repository\Repository.csproj" />

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF", "EF\EF.csproj", "{56FE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOs", "DTOs\DTOs.csproj", "{444D1236-113B-4C98-B02E-FC7DF9A91E71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{90C94F35-6769-4F73-88A7-A4F428B81A24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{444D1236-113B-4C98-B02E-FC7DF9A91E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{444D1236-113B-4C98-B02E-FC7DF9A91E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{444D1236-113B-4C98-B02E-FC7DF9A91E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C94F35-6769-4F73-88A7-A4F428B81A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C94F35-6769-4F73-88A7-A4F428B81A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C94F35-6769-4F73-88A7-A4F428B81A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C94F35-6769-4F73-88A7-A4F428B81A24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
