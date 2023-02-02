@@ -36,10 +36,12 @@ namespace Services
             return _mapper.Map<ProductDTO>(data);
         }
 
-        public void Create(ProductDTO product)
+        public ProductDTO Create(ProductDTO product)
         {
             _productRepository.Create(_mapper.Map<Product>(product));
             _unitOfWork.SaveChanges();
+
+            return product;
         }
 
         public void Update(ProductDTO product)

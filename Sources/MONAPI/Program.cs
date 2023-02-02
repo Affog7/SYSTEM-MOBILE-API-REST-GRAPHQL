@@ -1,9 +1,11 @@
-﻿using MONAPI;
+﻿using System.Net;
+using MONAPI;
 
 public class Program
 {
     public static void Main(string[] args)
     {
+        ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
         CreateHostBuilder(args).Build().Run();
     }
 

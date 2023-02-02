@@ -7,7 +7,7 @@ namespace Services.Abstracts
     {
         IEnumerable<ProductDTO> GetAll();
         ProductDTO GetById(int id);
-        void Create(ProductDTO product);
+        ProductDTO Create(ProductDTO product);
         void Update(ProductDTO product);
         void Delete(ProductDTO product);
     }
