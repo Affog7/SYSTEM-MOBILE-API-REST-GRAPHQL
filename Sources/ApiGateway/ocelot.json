@@ -1,7 +1,7 @@
 ﻿{
   "Routes": [
     {
-      "DownstreamPathTemplate": "api/Products,,
+      "DownstreamPathTemplate": "/api/Products/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -9,13 +9,23 @@
           "Port": 7160
         }
       ],
-      "UpstreamPathTemplate": "/api/Products",
-      "UpstreamHttpMethod": [
-        "Get"
-      ]
+      "UpstreamPathTemplate": "/Products/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Products",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7160
+        }
+      ],
+      "UpstreamPathTemplate": "/Products",
+      "UpstreamHttpMethod": [ "Get", "Put", "Post" ]
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost"
+    "BaseUrl": "https://localhost:7178"
   }
 }

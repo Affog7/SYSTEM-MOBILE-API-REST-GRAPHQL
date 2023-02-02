@@ -3,35 +3,24 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Cache.CacheManager;
 
-namespace ApiGateway
+namespace ApiGateway;
+
+public class Startup
 {
-	public class Startup
-	{
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddOcelot().AddCacheManager(settings => settings.WithDictionaryHandle());
-        }
+    public Startup(IConfiguration configuration)
+    {
+        Configuration = configuration;
+    }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+    public IConfiguration Configuration { get; }
 
-            app.UseRouting();
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddOcelot(Configuration);
+    }
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
-            });
-
-            await app.UseOcelot();
-        }
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        app.UseOcelot().Wait();
     }
 }
-

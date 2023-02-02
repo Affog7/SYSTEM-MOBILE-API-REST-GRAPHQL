@@ -20,3 +20,13 @@ Welcome on the APIWEB project!
 
 _Generated with a_ **Code#0** _template_  
 <img src="Documentation/doc_images/CodeFirst.png" height=40/>   
+
+** GRAPH QL
+
+    1- Créer un projet web .NET en utilisant le modèle "API"
+    2- Ajoutez les packages NuGet GraphQL et GraphQL.Server.Core
+    3- Créez une classe de démarrage pour configurer GraphQL, en implémentant l'interface IDependencyResolver et en utilisant EF pour fournir les données
+    4- Créez des types de données GraphQL pour correspondre à vos modèles de données EF
+    5- Créez une classe de requête qui étend la classe QueryGraphType pour décrire les opérations de lecture
+    6- Créez une classe de mutation qui étend la classe MutationGraphType pour décrire les opérations de modification
+    7- Enfin, dans le fichier de démarrage, utilisez les classes de requête et de mutation pour créer un schéma GraphQL et l'utiliser pour configurer le middleware GraphQL.
