@@ -31,18 +31,12 @@ namespace APIQL
 
             services.AddSingleton<IProductRepository, ProductRepository>();
 
-            services.AddScoped<IDependencyResolver>(x =>
-                new FuncDependencyResolver(x.GetRequiredService));
+            
 
             services.AddSingleton<IProductService, ProductService>();
             services.AddSingleton<ProductQuery>();
             services.AddSingleton<ProductMutation>();
-
-            services.AddGraphQL(x =>
-            {
-                x.ExposeExceptions = true;
-            })
-            .AddGraphTypes(ServiceLifetime.Scoped);
+ 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,9 +52,7 @@ namespace APIQL
                 app.UseHsts();
             }
 
-            app.UseGraphQL<GuestSchema>("/guests");
-            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
-
+           
             app.UseHttpsRedirection();
             // app.UseMvc();
         }
