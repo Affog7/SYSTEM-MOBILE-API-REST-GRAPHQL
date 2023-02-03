@@ -11,7 +11,12 @@ namespace APIQL.Queries
     {
         public ProductQuery(IProductService productRepository)
         {
-            Field<ListGraphType<ProductsType>>("",
+            Field<ListGraphType<ProductsType>>(
+            "product",
+               resolve: context => productRepository.GetAll()
+           );
+
+            Field<ListGraphType<ProductsType>>("products",
                 arguments: new QueryArguments(new List<QueryArgument>
                 {
                     new QueryArgument<IntGraphType>

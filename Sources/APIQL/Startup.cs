@@ -1,16 +1,19 @@
 ﻿
 using APIQL.Mutations;
 using APIQL.Queries;
+using EF;
 using GraphQL;
 using GraphQL.Server;
 using GraphQL.Server.Ui.Playground;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
  using Repository;
 using Services;
 using Services.Abstracts;
+using Services.UnitOfWork;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace APIQL
@@ -24,37 +27,54 @@ namespace APIQL
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            // Ajout de la base de données
+            services.AddDbContext<MyDbContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddSingleton<IProductRepository, ProductRepository>();
+            // Ajout des contrôleurs
+            services.AddControllers();
 
-            
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddSingleton<IProductService, ProductService>();
-            services.AddSingleton<ProductQuery>();
-            services.AddSingleton<ProductMutation>();
- 
+          
+
+
+
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IStockService, StockService>();
+            // Ajout de la compatibilité avec les versions
+
+            services.AddEndpointsApiExplorer();
+
+            services.AddSwaggerGen();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IStockRepository, StockRepository>();
+
+
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
 
-           
+            // Utilisation de la redirection HTTPS
             app.UseHttpsRedirection();
-            // app.UseMvc();
+
+            // Utilisation du routage
+            app.UseRouting();
+
+            // Utilisation des points de terminaison pour les contrôleurs
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
