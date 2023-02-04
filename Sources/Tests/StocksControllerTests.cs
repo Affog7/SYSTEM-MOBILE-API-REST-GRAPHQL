@@ -1,4 +1,6 @@
 ﻿using System;
+using MONAPI;
+
 namespace Tests
 {
     public class StocksControllerTests
