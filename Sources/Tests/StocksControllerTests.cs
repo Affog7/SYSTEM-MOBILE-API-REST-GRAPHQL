@@ -12,7 +12,7 @@ namespace Tests
             var controller = new StocksController(mockStockService.Object);
 
             // Act
-            var result = controller.Index();
+            var result = controller.Index(); 
 
             // Assert
             Assert.IsType<OkObjectResult>(result);
