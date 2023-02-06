@@ -1,20 +1,29 @@
-﻿using AutoMapper;
+﻿using System.Net;
+using System.Text;
+using AutoMapper;
 using DTOs;
 using EF;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
+using Microsoft.VisualBasic;
 using Models;
 using MONAPI.Mapper;
+using MONAPI.Swagger;
 using Repository;
 using Services;
 using Services.Abstracts;
 using Services.UnitOfWork;
-
+using Swashbuckle.AspNetCore.SwaggerGen;
+ 
+ 
 namespace MONAPI
 {
     public class Startup
@@ -56,6 +65,27 @@ namespace MONAPI
             services.AddSwaggerGen();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IStockRepository, StockRepository>();
+
+
+            services.AddApiVersioning(options =>
+            {
+                options.ReportApiVersions = true;
+                options.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+            });
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerGenOptions>();
+
+            services.AddVersionedApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            });
+
+            services.AddSingleton<ILoggerFactory, LoggerFactory>();
+            services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
+            services.AddLogging((builder) => builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace));
+
+
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -64,7 +94,18 @@ namespace MONAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI();
+
+        
+                app.UseSwaggerUI(options =>
+                {
+                    var provider = app.ApplicationServices.GetService<IApiVersionDescriptionProvider>();
+                    foreach (var description in provider.ApiVersionDescriptions)
+                    {
+                        options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", $"My API {description.ApiVersion}");
+                    }
+                });
+
+                   
             }
 
             // Utilisation de la redirection HTTPS
@@ -79,5 +120,12 @@ namespace MONAPI
                 endpoints.MapControllers();
             });
         }
+
+
+
+
+
+        
+
     }
 }

@@ -56,6 +56,14 @@ namespace Services
             _productRepository.Delete(_mapper.Map<Product>(product));
             _unitOfWork.SaveChanges();
         }
+
+        public IEnumerable<ProductDTO> GetByName(string name)
+        {
+         var list = new List<ProductDTO>();
+            foreach (var item in _productRepository.GetByName(name))
+                list.Add(_mapper.Map<ProductDTO>(item));
+            return list;
+        }
     }
 }
 

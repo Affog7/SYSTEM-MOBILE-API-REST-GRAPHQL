@@ -1,5 +1,6 @@
 ﻿using System;
 using DTOs;
+using Models;
 
 namespace Services.Abstracts
 {
@@ -10,6 +11,8 @@ namespace Services.Abstracts
         ProductDTO Create(ProductDTO product);
         void Update(ProductDTO product);
         void Delete(ProductDTO product);
+        IEnumerable<ProductDTO> GetByName(string name);
+
     }
 
 

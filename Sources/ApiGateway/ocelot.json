@@ -9,11 +9,11 @@
           "Port": 7160
         }
       ],
-      "UpstreamPathTemplate": "/Products/{id}",
+      "UpstreamPathTemplate": "/v2/Products/{id}",
       "UpstreamHttpMethod": [ "Get", "Put", "Post" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Products",
+      "DownstreamPathTemplate": "/api/v2/Products",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {

@@ -8,22 +8,28 @@ using Services.Abstracts;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace MONAPI.Controllers
+namespace MONAPI.Controllers.v1
 {
-    [Route("api/[controller]")]
+    [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ProductsController : Controller
     {
         private readonly IProductService _productService;
+        private readonly ILogger<ProductsController> _logger;
 
-        public ProductsController(IProductService productService)
+        public ProductsController(
+            ILogger<ProductsController> logger, IProductService productService)
         {
             _productService = productService;
+            _logger = logger;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
             var products = _productService.GetAll();
+            _logger.LogInformation("Fectching....");
             return Ok(products);
         }
 
