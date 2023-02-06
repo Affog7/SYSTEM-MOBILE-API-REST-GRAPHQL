@@ -17,8 +17,7 @@ public class ProductsControllerTests
     public async Task TestGetAll()
     {
         // Arrange
-        _mockProductService.Setup(x => x.GetAll(It.IsAny<int>()))
-            .Returns(new List<ProductDTO>());
+        _mockProductService.Setup(x => x.GetAll());
 
         // Act
         var result =   _controller.GetAll();
@@ -26,7 +25,7 @@ public class ProductsControllerTests
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
         var products = Assert.IsAssignableFrom<IEnumerable<ProductDTO>>(okResult.Value);
-        _mockProductService.Verify(x => x.GetAll(It.IsAny<int>()), Times.Once);
+        _mockProductService.Verify(x => x.GetAll(), Times.Once);
     }
 
     [Fact]
@@ -166,7 +165,7 @@ public class ProductsControllerTests
         var productName = "productName";
         var expectedProduct = new ProductDTO { Name = productName };
         var productServiceMock = new Mock<IProductService>();
-        productServiceMock.Setup(ps => ps.GetByName(productName)).Returns(expectedProduct);
+        productServiceMock.Setup(ps => ps.GetByName(productName)).Returns((IEnumerable<ProductDTO>)expectedProduct);
         var productsController = new ProductsController(productServiceMock.Object);
 
         // Act
@@ -184,7 +183,7 @@ public class ProductsControllerTests
         var productName = "productName";
         ProductDTO expectedProduct = null;
         var productServiceMock = new Mock<IProductService>();
-        productServiceMock.Setup(ps => ps.GetByName(productName)).Returns(expectedProduct);
+        productServiceMock.Setup(ps => ps.GetByName(productName)).Returns((IEnumerable<ProductDTO>)expectedProduct);
         var productsController = new ProductsController(productServiceMock.Object);
 
         // Act
