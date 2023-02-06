@@ -43,7 +43,7 @@ namespace MONAPI.Controllers.v2
 
 
         [HttpGet("{name}")]
-        public IActionResult GetById(string name)
+        public IActionResult GetByName(string name)
         {
             var product = _productService.GetByName(name);
             if (product == null)
