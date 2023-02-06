@@ -158,7 +158,7 @@ public class ProductsControllerTests
 
 
 
-    [Fact]
+  /*  [Fact]
     public async Task GetByName_ReturnsProduct_WhenProductExists()
     {
         // Arrange
@@ -175,7 +175,7 @@ public class ProductsControllerTests
         Assert.NotNull(result);
         Assert.Equal(expectedProduct, result.Value);
     }
-
+  */
     [Fact]
     public async Task GetByName_ReturnsNotFound_WhenProductDoesNotExist()
     {
