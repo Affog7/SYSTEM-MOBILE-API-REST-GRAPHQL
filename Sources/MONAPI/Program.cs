@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using MONAPI;
 
-public class Program
+public class ProgramApi
 {
     public static void Main(string[] args)
     {
