@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 using Services;
 using Services.Abstracts;
 
-namespace MONAPI
+namespace MONAPI.Controllers.v1
 {
-    [Route("api/[controller]")]
+    [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class StocksController : Controller
     {
         private readonly IStockService _stockService;

@@ -38,6 +38,11 @@ namespace Repository
         {
             _context.Product.Remove(product);
         }
+
+        public IEnumerable<Product> GetByName(string name)
+        {
+          return  _context.Product.Where(p => p.Name.Contains(name)).DefaultIfEmpty();
+        }
     }
 }
 

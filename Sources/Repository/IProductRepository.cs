@@ -8,5 +8,7 @@ public interface IProductRepository
     void Create(Product product);
     void Update(Product product);
     void Delete(Product product);
+    IEnumerable<Product> GetByName(string name);
+
 }
 
