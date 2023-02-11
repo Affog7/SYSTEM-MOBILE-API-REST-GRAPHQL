@@ -27,7 +27,7 @@ namespace MONAPI.Controllers.v1
          }
 
         [HttpGet]
-        public IActionResult GetAll(int page, int taille)
+        public IActionResult GetAll(int page = 1, int taille=20)
         {
             var products = _productService.GetAll();
 

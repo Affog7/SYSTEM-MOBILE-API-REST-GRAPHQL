@@ -95,6 +95,7 @@ namespace MONAPI
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
 
+
         
                 app.UseSwaggerUI(options =>
                 {
