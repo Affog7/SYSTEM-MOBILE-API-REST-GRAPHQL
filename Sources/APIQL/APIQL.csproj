@@ -8,10 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    <PackageReference Include="GraphQL" Version="7.2.2" />
     <PackageReference Include="GraphQL.Server.Ui.Playground" Version="7.2.0" />
-    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="7.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="13.0.2" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="7.2.0" />
+    <PackageReference Include="GraphQL.SystemTextJson" Version="7.2.2" />
+    <PackageReference Include="GraphQL" Version="7.2.2" />
+    <PackageReference Include="GraphQL.Server" Version="1.7.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +30,14 @@
     <None Remove="Microsoft.Extensions.DependencyModel" />
     <None Remove="GraphQL.Server.Transports.AspNetCore" />
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="HotChocolate.AspNetCore" />
+    <None Remove="HotChocolate.AspNetCore.Playground" />
+    <None Remove="HEF.Extensions.GraphQL.Server.Ui.Playground" />
+    <None Remove="GraphQL.Server.Transports.AspNetCore.SystemTextJson" />
+    <None Remove="GraphQL, Version=4.6.1.0, Culture=neutral, PublicKeyToken=null" />
+    <None Remove="GraphQL.NewtonsoftJson" />
+    <None Remove="GraphQL.SystemTextJson" />
+    <None Remove="GraphQL.Server" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Types\" />
@@ -41,5 +52,8 @@
     <ProjectReference Include="..\Services\Services.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GraphQL, Version=4.6.1.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
 </Project>

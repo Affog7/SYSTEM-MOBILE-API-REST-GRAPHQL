@@ -1,6 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using DTOs;
+using Microsoft.Extensions.Logging;
 using Models;
 using Repository;
 using Services.Abstracts;
@@ -13,8 +14,9 @@ namespace Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
-             
-        public ProductService(IUnitOfWork unitOfWork, IProductRepository productRepository,IMapper mapper)
+        private readonly ILogger<ProductService> _logger;
+
+        public ProductService(ILogger<ProductService> logger, IUnitOfWork unitOfWork, IProductRepository productRepository,IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _productRepository = productRepository;
@@ -46,8 +48,12 @@ namespace Services
 
         public void Update(ProductDTO product)
         {
+            var produ = _productRepository.GetById(product.Id);
+            produ.Name = product.Name;
+            produ.Price = product.Price;
+            produ.Quantity = product.Quantity;
 
-            _productRepository.Update(_mapper.Map<Product>(product));
+            _productRepository.Update(produ);
             _unitOfWork.SaveChanges();
         }
 

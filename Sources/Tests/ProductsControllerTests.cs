@@ -1,5 +1,7 @@
 ﻿
 
+using Microsoft.AspNetCore.Mvc;
+
 namespace Tests;
 
 public class ProductsControllerTests
