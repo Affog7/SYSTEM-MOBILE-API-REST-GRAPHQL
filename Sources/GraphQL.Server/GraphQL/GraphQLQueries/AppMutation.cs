@@ -1,9 +1,6 @@
 ﻿namespace DemoGraphQL.Server.GraphQL.GraphQLQueries
 {
     using APIQL.Types;
-    using DemoGraphQL.Server.Contracts;
-    using DemoGraphQL.Server.Entities;
-    using DemoGraphQL.Server.GraphQL.GraphQLTypes;
     using DTOs;
     using global::GraphQL;
     using global::GraphQL.Types;

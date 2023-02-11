@@ -1,7 +1,5 @@
 ﻿namespace DemoGraphQL.Server.GraphQL.GraphQLQueries
 {
-    using DemoGraphQL.Server.Contracts;
-    using DemoGraphQL.Server.GraphQL.GraphQLTypes;
     using global::GraphQL;
     using global::GraphQL.Types;
     using global::Repository;
