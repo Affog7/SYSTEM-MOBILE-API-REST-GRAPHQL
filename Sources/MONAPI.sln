@@ -23,8 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIREST", "APIREST\APIREST.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Server", "GraphQL.Server\GraphQL.Server.csproj", "{E719FA8A-713F-4DD1-93A0-A64DF5FB9F83}"
 EndProject
-Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "GraphQL.Server", "GraphQL.Server\GraphQL.Server.csproj", "{BC12C128-DF5C-43FE-8DCE-7AB457CE1E64}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
