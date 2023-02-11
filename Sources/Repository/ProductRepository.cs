@@ -31,12 +31,14 @@ namespace Repository
 
         public void Update(Product product)
         {
+          
             _context.Product.Update(product);
         }
 
         public void Delete(Product product)
         {
-            _context.Product.Remove(product);
+            var d_ = _context.Product.Find(product.Id);
+            _context.Product.Remove(d_);
         }
 
         public IEnumerable<Product> GetByName(string name)

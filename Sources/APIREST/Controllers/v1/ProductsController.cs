@@ -19,28 +19,23 @@ namespace MONAPI.Controllers.v1
     public class ProductsController : Controller
     {
         private readonly IProductService _productService;
-        private readonly ILogger<ProductsController> _logger;
-
+ 
         public ProductsController(
             ILogger<ProductsController> logger, IProductService productService)
         {
             _productService = productService;
-            _logger = logger;
-        }
+         }
 
         [HttpGet]
         public IActionResult GetAll(int page, int taille)
         {
-
-           
-
             var products = _productService.GetAll();
+
             var resources = products
              .Skip((page - 1) * taille)
              .Take(taille)
              .ToList();
-
-            _logger.LogInformation("Fectching....");
+ 
 
             return Ok(new
             {
@@ -51,7 +46,7 @@ namespace MONAPI.Controllers.v1
                 taille
             });
 
-            return Ok(products);
+           // return Ok(products);
         }
 
         [HttpGet("{id}")]

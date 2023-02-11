@@ -12,4 +12,3 @@ namespace Models
         public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }
-

@@ -14,11 +14,22 @@ public class MyDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<Product>()
+          .Property(s => s.StockForeignKey).HasDefaultValue(1);
+
         Stock stock = new Stock {  Id = 1, Name ="Stock1"};
 
         modelBuilder.Entity<Stock>().HasData(stock);
- 
-        modelBuilder.Entity<Product>().HasData(new Product { Id = 1, StockForeignKey = 1,  Name = "So What" , Price = 122, Quantity=12},
+
+        modelBuilder.Entity<Product>()
+        .HasOne(s => s.Stock)
+        .WithMany(c => c.Products)
+        .HasForeignKey(s => s.StockForeignKey)
+        .IsRequired(false);
+
+        modelBuilder.Entity<Product>().HasData(
+            new Product { Id = 1, StockForeignKey = 1,  Name = "So What" , Price = 122, Quantity=12},
             new Product { Id = 2, StockForeignKey = 1, Name = "PC ", Price = 12, Quantity = 12 },
             new Product { Id = 3, StockForeignKey = 1, Name = "Gamer", Price = 22, Quantity = 2 },
             new Product { Id = 4, StockForeignKey = 1, Name = "Linge", Price = 12, Quantity = 12 },

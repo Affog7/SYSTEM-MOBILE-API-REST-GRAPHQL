@@ -2,7 +2,8 @@
 using APIQL.Mutations;
 using APIQL.Queries;
 using GraphQL.Types;
-using GraphQL; 
+using GraphQL;
+using Schema = GraphQL.Types.Schema;
 
 namespace APIQL.Schemas
 {

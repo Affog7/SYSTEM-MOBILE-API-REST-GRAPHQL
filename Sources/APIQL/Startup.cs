@@ -1,20 +1,20 @@
 ﻿
-using APIQL.Mutations;
 using APIQL.Queries;
+using APIQL.Schemas;
+using APIQL.Types;
 using EF;
-using GraphQL;
-using GraphQL.Server;
-using GraphQL.Server.Ui.Playground;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
- using Repository;
+using Repository;
 using Services;
 using Services.Abstracts;
 using Services.UnitOfWork;
-using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
+using Newtonsoft.Json;
+using GraphQL;
+using MONAPI.Mapper;
+using GraphQL.SystemTextJson;
+using APIQL.Mutations;
 
 namespace APIQL
 {
@@ -37,10 +37,22 @@ namespace APIQL
             services.AddControllers();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+ 
+ 
+            services
+        .AddGraphQLServer()
+        .AddDefaultTransactionScopeHandler() // create transaction scopes for mutation requests to wrap these in a transaction that we can control
+        .AddQueryType<ProductQuery>()
+        .AddMutationType<ProductMutation>()
+        .AddMutationConventions(applyToAllMutations: true);
 
-          
-
-
+            // Mapping
+            var config = new MyMapper().ProductProfile();
+            var mapper = config.CreateMapper();
+            var config1 = new MyMapper().StockProfile();
+            var mapper1 = config.CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddSingleton(mapper1);
 
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IStockService, StockService>();
@@ -52,6 +64,13 @@ namespace APIQL
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IStockRepository, StockRepository>();
 
+            services.AddScoped<ProductSchema>();
+
+           
+
+            services.Configure<KestrelServerOptions>(options => {
+                options.AllowSynchronousIO = true;
+            });
 
         }
 
@@ -60,21 +79,17 @@ namespace APIQL
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI();
+              
             }
 
-            // Utilisation de la redirection HTTPS
             app.UseHttpsRedirection();
-
-            // Utilisation du routage
             app.UseRouting();
+            app.UseAuthorization();
+            app.UseGraphQL("/graphql");
 
-            // Utilisation des points de terminaison pour les contrôleurs
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseGraphQLPlayground(options : new GraphQL.Server.Ui.Playground.PlaygroundOptions());
+            app.UseEndpoints( e => e.MapDefaultControllerRoute() );
         }
+
     }
 }
