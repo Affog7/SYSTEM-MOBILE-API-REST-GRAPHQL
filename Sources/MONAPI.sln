@@ -23,7 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIREST", "APIREST\APIREST.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Server", "GraphQL.Server\GraphQL.Server.csproj", "{E719FA8A-713F-4DD1-93A0-A64DF5FB9F83}"
 EndProject
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Client", "GraphQL.Client\GraphQL.Client.csproj", "{7B9EAA5A-DDE0-482C-AA7E-9064BBAB973A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +79,10 @@ Global
 		{BC12C128-DF5C-43FE-8DCE-7AB457CE1E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC12C128-DF5C-43FE-8DCE-7AB457CE1E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC12C128-DF5C-43FE-8DCE-7AB457CE1E64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9EAA5A-DDE0-482C-AA7E-9064BBAB973A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9EAA5A-DDE0-482C-AA7E-9064BBAB973A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9EAA5A-DDE0-482C-AA7E-9064BBAB973A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9EAA5A-DDE0-482C-AA7E-9064BBAB973A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

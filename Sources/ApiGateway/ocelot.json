@@ -23,6 +23,18 @@
       ],
       "UpstreamPathTemplate": "/Products",
       "UpstreamHttpMethod": [ "Get", "Put", "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/graphql",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/graphql",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
     }
   ],
   "GlobalConfiguration": {

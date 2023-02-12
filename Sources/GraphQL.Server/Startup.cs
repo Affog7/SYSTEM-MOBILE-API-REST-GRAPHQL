@@ -1,9 +1,6 @@
 namespace DemoGraphQL.Server
-{
-    using DemoGraphQL.Server.Contracts;
-    using DemoGraphQL.Server.Entities.Context;
+{ 
     using DemoGraphQL.Server.GraphQL.GraphQLSchema;
-    using DemoGraphQL.Server.Repository;
     using EF;
     using global::GraphQL.Server;
     using global::Repository;

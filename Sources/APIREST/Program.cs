@@ -5,7 +5,6 @@ public class ProgramApi
 {
     public static void Main(string[] args)
     {
-        ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
         CreateHostBuilder(args).Build().Run();
     }
 
@@ -13,6 +12,8 @@ public class ProgramApi
         Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(webBuilder =>
             {
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
                 webBuilder.UseStartup<Startup>();
             });
 }

@@ -12,8 +12,7 @@ namespace OcelotApiGw
     {
         public static void Main(string[] args)
         {
-            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-
+          
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -25,6 +24,8 @@ namespace OcelotApiGw
                   })
                  .ConfigureWebHostDefaults(webBuilder =>
                  {
+                     ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
                      webBuilder.UseStartup<Startup>();
                  });
     }
