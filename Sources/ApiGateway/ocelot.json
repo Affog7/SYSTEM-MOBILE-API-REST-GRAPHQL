@@ -25,8 +25,8 @@
       "UpstreamHttpMethod": [ "Get", "Put", "Post" ]
     },
     {
-      "DownstreamPathTemplate": "/ui/playground",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/graphql",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -34,7 +34,7 @@
         }
       ],
       "UpstreamPathTemplate": "/graphql",
-      "UpstreamHttpMethod": [ "Get", "Put", "Post" ]
+      "UpstreamHttpMethod": [ "GET", "POST" ]
     }
   ],
   "GlobalConfiguration": {

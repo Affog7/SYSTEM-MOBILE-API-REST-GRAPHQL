@@ -8,18 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Afficheur\" />
-    <None Remove="Saisisseur\" />
     <None Remove="Newtonsoft.Json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Afficheur\" />
-    <Folder Include="Saisisseur\" />
+    <None Remove="GraphQL" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3-beta1" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DTOs\DTOs.csproj" />
+    <PackageReference Include="GraphQL" Version="7.2.2" />
   </ItemGroup>
 </Project>
