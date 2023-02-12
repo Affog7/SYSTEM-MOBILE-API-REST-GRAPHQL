@@ -1,6 +1,6 @@
 [![Build Status](https://codefirst.iut.uca.fr/api/badges/augustin.affognon/APIWEB/status.svg)](https://codefirst.iut.uca.fr/augustin.affognon/APIWEB)  
 [![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=APIWEB&metric=alert_status&token=ec78ebab2c3249a471935edf1ebae23f27c864e2)](https://codefirst.iut.uca.fr/sonar/dashboard?id=APIWEB)
-[![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=APIWEB&metric=coverage&token=ec78ebab2c3249a471935edf1ebae23f27c864e2)](https://codefirst.iut.uca.fr/sonar/dashboard?id=APIWEB)
+[![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=APIWEB&metric=coverage& token=ec78ebab2c3249a471935edf1ebae23f27c864e2)](https://codefirst.iut.uca.fr/sonar/dashboard?id=APIWEB)
 [![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=APIWEB&metric=bugs&token=ec78ebab2c3249a471935edf1ebae23f27c864e2)](https://codefirst.iut.uca.fr/sonar/dashboard?id=APIWEB)
 [![Code Smells](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=APIWEB&metric=code_smells&token=ec78ebab2c3249a471935edf1ebae23f27c864e2)](https://codefirst.iut.uca.fr/sonar/dashboard?id=APIWEB)
 [![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=APIWEB&metric=coverage&token=ec78ebab2c3249a471935edf1ebae23f27c864e2)](https://codefirst.iut.uca.fr/sonar/dashboard?id=APIWEB)  
