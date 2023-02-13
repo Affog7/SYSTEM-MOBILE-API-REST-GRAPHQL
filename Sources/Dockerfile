@@ -6,8 +6,8 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["/APIREST.csproj", "APIREST/"]
+WORKDIR /src/
+COPY ["APIREST/APIREST.csproj", "APIREST/"]
 COPY ["Models/Models.csproj", "Models/"]
 COPY ["Services/Services.csproj", "Services/"]
 COPY ["Repository/Repository.csproj", "Repository/"]
