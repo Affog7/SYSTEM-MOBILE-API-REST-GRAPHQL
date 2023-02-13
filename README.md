@@ -19,11 +19,14 @@ Welcome on the APIWEB project!
 
   
 
-_Generated with a_ **Code#0** _template_  
-<img src="Documentation/doc_images/CodeFirst.png" height=40/>   
+ 
 # ARCHITECTURE
 <img src="Documentation/doc_images/systems.png" with=25%/>  
+<div>
+<img src="Documentation/doc_images/rest.png" with=25%/>  
+<img src="Documentation/doc_images/graph.png" with=25%/>  
 
+<div/>
 # POURQUOI REST ET GRAPHQL?
 ** GRAPH QL
 
