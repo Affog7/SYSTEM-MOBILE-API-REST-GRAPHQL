@@ -11,13 +11,18 @@ public class Startup
     {
         Configuration = configuration;
     }
+    
 
     public IConfiguration Configuration { get; }
 
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddOcelot(Configuration);
-        
+        services.AddSingleton<ILoggerFactory, LoggerFactory>();
+        services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
+        services.AddLogging((builder) => builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace));
+
+
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

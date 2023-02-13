@@ -11,6 +11,7 @@ namespace DemoGraphQL.Server
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
     using MONAPI.Mapper;
     using Services;
     using Services.Abstracts;
@@ -78,7 +79,10 @@ namespace DemoGraphQL.Server
             var mapper1 = config.CreateMapper();
             services.AddSingleton(mapper);
             services.AddSingleton(mapper1);
-            
+
+            services.AddSingleton<ILoggerFactory, LoggerFactory>();
+            services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
+            services.AddLogging((builder) => builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace));
 
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IStockService, StockService>();
