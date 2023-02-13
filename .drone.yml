@@ -61,6 +61,22 @@ steps:
         - master
     depends_on: [ build ]
 
+# docker image build
+- name: docker-build
+    image: plugins/docker
+    settings:
+       dockerfile: Sources/Dockerfile
+       context: .
+       registry: hub.codefirst.iut.uca.fr
+       repo: hub.codefirst.iut.uca.fr/augustin.affognon/APIWEB
+       username:
+         from_secret: SECRET_REGISTRY_USERNAME
+       password:
+         from_secret: SECRET_REGISTRY_PASSWORD
+    when:
+      branch:
+        - master
+
 volumes:
 - name: docs
   temp: {}
