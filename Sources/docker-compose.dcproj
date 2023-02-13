@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>{BBAF24B7-70A0-4D25-B5D5-41AFDD7688D9}</ProjectGuid>
+    <ProjectGuid>{8EC93511-124F-440C-944A-912E512B5EA2}</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>apirest</DockerServiceName>
