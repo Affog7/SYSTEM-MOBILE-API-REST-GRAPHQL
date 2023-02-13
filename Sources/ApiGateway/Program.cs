@@ -20,6 +20,9 @@ namespace OcelotApiGw
              Host.CreateDefaultBuilder(args)
                   .ConfigureAppConfiguration((hostingContext, config) =>
                   {
+                      ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
+
                       config.AddJsonFile($"ocelot.json", false, true);
                   })
                  .ConfigureWebHostDefaults(webBuilder =>

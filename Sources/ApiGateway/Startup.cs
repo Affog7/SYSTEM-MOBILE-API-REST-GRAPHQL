@@ -17,6 +17,8 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
+
+
         services.AddOcelot(Configuration);
         services.AddSingleton<ILoggerFactory, LoggerFactory>();
         services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
