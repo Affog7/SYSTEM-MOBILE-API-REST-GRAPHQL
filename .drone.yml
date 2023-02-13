@@ -62,7 +62,7 @@ steps:
     depends_on: [ build ]
 
 # docker image build
-- name: docker-build
+  - name: docker-build
     image: plugins/docker
     settings:
        dockerfile: Sources/Dockerfile
