@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Sources/APIREST/APIREST.csproj", "APIREST/"]
+COPY ["APIREST/APIREST.csproj" "./APIREST/"]
 COPY ["Models/Models.csproj", "Models/"]
 COPY ["Services/Services.csproj", "Services/"]
 COPY ["Repository/Repository.csproj", "Repository/"]
@@ -25,3 +25,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "APIREST.dll"]
+
