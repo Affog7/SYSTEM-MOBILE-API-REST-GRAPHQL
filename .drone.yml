@@ -61,30 +61,7 @@ steps:
         - master
     depends_on: [ build ]
 
-  # container deployment
-  - name: deploy-container
-    image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
-    environment:
-        IMAGENAME: hub.codefirst.iut.uca.fr/augustin.affognon/APIWEB:latest
-        CONTAINERNAME: api_container
-        COMMAND: create
-        OVERWRITE: true
-
-# docker image build
-  - name: docker-build
-    image: plugins/docker
-    settings:
-       dockerfile: Sources/APIREST/Dockerfile
-       context: .
-       registry: hub.codefirst.iut.uca.fr
-       repo: hub.codefirst.iut.uca.fr/augustin.affognon/APIWEB
-       username:
-         from_secret: SECRET_REGISTRY_USERNAME
-       password:
-         from_secret: SECRET_REGISTRY_PASSWORD
-    when:
-      branch:
-        - master
+ 
 
 volumes:
 - name: docs
